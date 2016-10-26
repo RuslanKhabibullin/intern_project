@@ -1,0 +1,21 @@
+.container
+  .mainbox.col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2
+    .panel.panel-default
+
+      .panel-heading
+        .panel-title Change your password
+
+      .panel-body
+        = simple_form_for(resource, as: resource_name, url: password_path(resource_name),
+                html: { method: :put, class: 'form-horizontal' }, wrapper: :horizontal_form ) do |f|
+          = f.error_notification
+          = f.input :reset_password_token, as: :hidden
+          = f.full_error :reset_password_token
+          .form-inputs
+            = f.input :password, label: 'New password', required: true, autofocus: true,
+                    placeholder: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
+            = f.input :password_confirmation, label: 'Confirm your new password', required: true
+          .form-actions
+            .col-sm-7.col-sm-offset-5.controls
+              = f.button :submit, 'Change my password'
+        = render 'devise/shared/links'

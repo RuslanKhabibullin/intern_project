@@ -1,10 +1,18 @@
-h2
-  | Log in
-= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .form-inputs
-    = f.input :email, required: false, autofocus: true
-    = f.input :password, required: false
-    = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
-  .form-actions
-    = f.button :submit, 'SignIn'
-= render "devise/shared/links"
+.container
+  .mainbox.col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2
+    .panel.panel-default
+
+      .panel-heading
+        .panel-title Authorization
+
+      .panel-body
+        = simple_form_for(resource, as: resource_name, url: session_path(resource_name),
+                html: { class: 'form-horizontal' }, wrapper: :horizontal_form) do |f|
+          .form-inputs
+            = f.input :email, required: false, autofocus: true
+            = f.input :password, required: false
+            = f.input :remember_me, class: 'checkbox', as: :boolean if devise_mapping.rememberable?
+          .form-actions
+            .col-sm-7.col-sm-offset-5.controls
+              = f.button :submit, 'SignIn'
+        = render "devise/shared/links"

@@ -17,7 +17,7 @@ describe 'Devise pages' do
     context 'when registration is invalid' do
       before { click_button('SignUp') }
 
-      it { should have_content('errors') }
+      it { should have_content('problems') }
     end
 
     context 'when registration is success' do
@@ -47,7 +47,7 @@ describe 'Devise pages' do
     context 'when authorization is invalid' do
       before { click_button 'SignIn' }
 
-      it { should have_selector('div.aler.alert-warning') }
+      it { should have_selector('div.alert.alert-warning') }
       it { should have_content('Invalid') }
 
     end
