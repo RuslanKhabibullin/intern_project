@@ -12,6 +12,10 @@
 /tmp/*
 !/log/.keep
 !/tmp/.keep
+/.idea
 
 # Ignore Byebug command history file.
 .byebug_history
+
+# Configs
+.env
