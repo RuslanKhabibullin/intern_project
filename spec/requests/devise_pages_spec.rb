@@ -17,7 +17,7 @@ describe 'Devise pages' do
     it { should have_field('Username') }
     it { should have_field('Email') }
     it { should have_field('Password') }
-    it { should have_field('Confirmation') }
+    it { should have_field('Password confirmation') }
     it { should have_button('SignUp') }
 
     context 'when registration is invalid' do
@@ -28,7 +28,7 @@ describe 'Devise pages' do
 
     context 'when registration is success' do
       before do
-        user_params = user_attr_confirmation_fix(FactoryGirl.attributes_for(:user))
+        user_params = FactoryGirl.attributes_for(:user)
         fill_form(:user, user_params)
         click_button('SignUp')
       end
@@ -100,7 +100,7 @@ describe 'Devise pages' do
 
       before do
         user_params = { username: new_username, current_password: user.password }
-        fill_form(:user, user_params)
+        fill_form(:user, :edit, user_params)
         click_button 'Update'
       end
 

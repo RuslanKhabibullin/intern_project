@@ -13,7 +13,7 @@
             = f.input :username, required: true, autofocus: true
             = f.input :email, required: true
             = f.input :password, required: true, placeholder: ("#{@minimum_password_length} characters minimum" if @minimum_password_length)
-            = f.input :password_confirmation, required: true, label: 'Confirmation'
+            = f.input :password_confirmation, required: true
           .form-actions
             .col-sm-7.col-sm-offset-5.controls
               = f.button :submit, 'SignUp'
