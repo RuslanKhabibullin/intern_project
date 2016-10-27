@@ -7,6 +7,14 @@
   text-align: center;
 }
 
+.alert-notice {
+  @extend .alert-info
+}
+
+.alert-alert {
+  @extend .alert-warning
+}
+
 .mainbox {
   font-weight: normal;
   margin-top: 30px;
