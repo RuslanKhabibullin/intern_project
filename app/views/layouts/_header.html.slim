@@ -2,4 +2,7 @@ header
   nav class="navbar navbar-default navbar-static-top"
     .container
       .navbar-header
-        a class="navbar-brand logo" ShMedium
+        = link_to('ShMedium', root_path, class: 'navbar-brand logo')
+
+      .p class="navbar-text navbar-right"
+        = link_to('Log out', destroy_user_session_path, :method => :delete) if user_signed_in?

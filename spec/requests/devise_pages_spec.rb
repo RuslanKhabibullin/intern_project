@@ -5,6 +5,12 @@ describe 'Devise pages' do
   subject { page }
   let(:user) { FactoryGirl.create(:user) }
 
+  def update_user
+    fill_in 'New password', with: '123456G'
+    fill_in 'Confirm your new password', with: '123456G'
+    click_button 'Change my password'
+  end
+
   describe 'SignUp page' do
     before { visit new_user_registration_path }
 
@@ -22,14 +28,8 @@ describe 'Devise pages' do
 
     context 'when registration is success' do
       before do
-        user_params = FactoryGirl.attributes_for(:user)
-
-        # Refactor needed(Formulaic throws errors)!
-
-        fill_in 'Username', with: user_params[:username]
-        fill_in 'Email', with: user_params[:email]
-        fill_in 'Password', with: user_params[:password]
-        fill_in 'Confirmation', with: user_params[:password_confirmation]
+        user_params = user_attr_confirmation_fix(FactoryGirl.attributes_for(:user))
+        fill_form(:user, user_params)
         click_button('SignUp')
       end
 
@@ -42,8 +42,6 @@ describe 'Devise pages' do
 
   describe 'SignIn page' do
     before { visit new_user_session_path }
-
-    # Remove to shared_example. But how to name? it_behaves_like 'signup_page_fields' ?
 
     it { should have_field('Email') }
     it { should have_field('Password') }
@@ -59,20 +57,31 @@ describe 'Devise pages' do
 
     context 'when authorization is valid' do
       before do
-        fill_in 'Email', with: user.email
-        fill_in 'Password', with: user.password
+        fill_form(:user, { email: user.email, password: user.password })
         click_button 'SignIn'
       end
 
       it { should have_selector('div.alert.alert-notice') }
       it { should have_content('Signed in') }
+      it { should have_link('Log out', href: destroy_user_session_path ) }
 
     end
   end
 
+  describe 'Log out' do
+    before do
+      sign_in(user)
+      click_link('Log out', href: destroy_user_session_path)
+    end
+
+    it { should have_content('Authorization') }
+    it { should have_content('You need to sign in or sign up before continuing.') }
+    it { should have_selector('div.alert.alert-alert') }
+  end
+
   describe 'Edit page' do
     before do
-      sign_in user
+      sign_in(user)
       visit edit_user_registration_path
     end
 
@@ -80,23 +89,22 @@ describe 'Devise pages' do
     it { should have_field('Email') }
     it { should have_field('Password') }
 
-    context 'when invalid editing' do
+    context 'when invalid data' do
       before { click_button 'Update' }
 
       it { should have_content('problems') }
     end
 
-    context 'when valid editing' do
+    context 'when valid data' do
       let(:new_username) { 'newUsername' }
 
       before do
-        fill_in 'Email', with: user.email
-        fill_in 'Username', with: new_username
-        fill_in 'Current password', with: user.password
+        user_params = { username: new_username, current_password: user.password }
+        fill_form(:user, user_params)
         click_button 'Update'
       end
 
-      specify { expect { user.reload.username }.eql? new_username }
+      specify { expect { current_user.reload.username }.eql? new_username }
       it { should have_content('updated') }
       it { should have_selector('div.alert.alert-notice') }
 
@@ -104,8 +112,6 @@ describe 'Devise pages' do
   end
 
   describe 'Forgot password page' do
-
-    # Need to finish
 
     let(:send_button) { 'Send instructions' }
 
@@ -123,13 +129,18 @@ describe 'Devise pages' do
       before do
         fill_in 'Email', with: user.email
         click_button send_button
-        @email = ActionMailer::Base.deliveries.last
       end
 
       it { should have_selector('div.alert.alert-notice') }
       it { should have_content('You will receive an email') }
 
+      specify 'user reset his password' do
+        open_email(user.email)
+        expect(current_email).to have_subject('Reset password instructions')
+        visit_in_email('Change my password')
+        update_user
+        expect(page).to have_content('Your password has been changed successfully')
+      end
     end
   end
-
 end

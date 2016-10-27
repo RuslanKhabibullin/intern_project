@@ -21,6 +21,8 @@ gem 'devise'
 
 group :test do
   gem 'capybara'
+  gem 'formulaic'
+  gem 'email_spec'
 end
 
 group :development, :test do
