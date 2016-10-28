@@ -35,6 +35,7 @@ group :development, :test do
   gem 'faker'
   gem 'rubocop', require: false
   gem 'rubocop-rspec', require: false
+  gem 'codeclimate-test-reporter', require: false
 end
 
 group :development do
