@@ -24,6 +24,7 @@ group :test do
   gem 'formulaic'
   gem 'email_spec'
   gem 'shoulda-matchers'
+  gem 'codeclimate-test-reporter', require: false
 end
 
 group :development, :test do
@@ -35,7 +36,6 @@ group :development, :test do
   gem 'faker'
   gem 'rubocop', require: false
   gem 'rubocop-rspec', require: false
-  gem 'codeclimate-test-reporter', require: false
 end
 
 group :development do
