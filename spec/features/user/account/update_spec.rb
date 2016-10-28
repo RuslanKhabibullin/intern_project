@@ -12,7 +12,7 @@ feature 'Update account' do
   background { visit edit_user_registration_path(current_user) }
 
   scenario 'User update profile with invalid data' do
-    fill_and_submit_edit_form(password: current_user.password, password_confirmation: 'error')
+    fill_and_submit_edit_form(password: 'newPass2', password_confirmation: 'error')
 
     expect(page).to have_selector('div.alert.alert-danger')
   end

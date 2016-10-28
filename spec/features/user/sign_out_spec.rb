@@ -11,7 +11,7 @@ feature 'Sign out' do
     click_link 'Log out'
 
     expect(page).to have_content('Authorization')
-    expect(page).to have_content('You need to sign in or sign up before continuing.')
+    expect(page).to have_content('You need to sign in or sign up before continuing')
     expect(page).to have_selector('div.alert.alert-alert')
   end
 end

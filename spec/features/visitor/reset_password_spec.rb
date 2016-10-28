@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'Reset password' do
-  let(:user) { FactoryGirl.create(:user) }
+  let(:user) { create(:user) }
   let(:new_password) { 'newHardPassword2' }
 
   def update_user
@@ -18,7 +18,7 @@ feature 'Reset password' do
   background { visit new_user_password_path }
 
   scenario 'Visitor fill reset form with invalid email' do
-   fill_and_submit_reset_form('wrongEmail@email.com')
+    fill_and_submit_reset_form('wrongEmail@email.com')
 
     expect(page).to have_content('problems')
     expect(page).to have_selector('div.alert.alert-danger')

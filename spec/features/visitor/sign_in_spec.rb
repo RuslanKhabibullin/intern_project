@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'Sign in' do
-  let(:user) { FactoryGirl.create(:user) }
+  let(:user) { create(:user) }
 
   background { visit new_user_session_path }
 
