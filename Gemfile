@@ -23,6 +23,7 @@ group :test do
   gem 'capybara'
   gem 'formulaic'
   gem 'email_spec'
+  gem 'shoulda-matchers'
 end
 
 group :development, :test do
@@ -31,6 +32,9 @@ group :development, :test do
   gem 'rspec-its'
   gem 'factory_girl_rails'
   gem 'dotenv-rails'
+  gem 'faker'
+  gem 'rubocop', require: false
+  gem 'rubocop-rspec', require: false
 end
 
 group :development do
