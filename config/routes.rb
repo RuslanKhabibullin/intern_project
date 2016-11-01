@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+  get 'users/show'
+
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
-  devise_scope :user do
-    root 'devise/registrations#edit'
+  resources :articles
+
+  resources :users, only: [:show] do
+    resources :articles, only: [:index]
   end
+
+  root 'articles#index'
 end

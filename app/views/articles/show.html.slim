@@ -1,0 +1,6 @@
+.col-md-12.card.article.article-mode-show
+  p class="article-author" = article.author_username
+  p = article.formatted_creation_date
+  h1 class="article-show-title" = article.title
+  .article-content
+    = article.content
