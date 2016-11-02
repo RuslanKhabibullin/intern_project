@@ -17,6 +17,6 @@ feature 'Sign up' do
     click_button 'SignUp'
 
     expect(page).to have_selector('div.alert.alert-notice')
-    expect(page).to have_content('Articles')
+    expect(page).to have_link('Log out', href: destroy_user_session_path)
   end
 end
