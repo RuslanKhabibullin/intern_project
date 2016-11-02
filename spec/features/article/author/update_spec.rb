@@ -18,6 +18,7 @@ feature 'Update article' do
     fill_form(:article, :edit, title: 'newTitle')
     click_button('Update Article')
 
+    expect(page).to have_content('Successfully updated')
     expect(page).to have_content('newTitle')
   end
 end

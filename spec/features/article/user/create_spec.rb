@@ -20,5 +20,6 @@ feature 'Create article' do
 
     expect(page).to have_content(article_attributes[:title])
     expect(page).to have_content(current_user.username)
+    expect(page).to have_content('Successfully created')
   end
 end
