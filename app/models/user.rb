@@ -4,5 +4,5 @@ class User < ApplicationRecord
 
   has_many :articles, foreign_key: 'author_id'
 
-  validates :username, presence: true, length: { minimum: 3, maximum: 90 }
+  validates :username, presence: true, length: { minimum: 2, maximum: 90 }
 end
