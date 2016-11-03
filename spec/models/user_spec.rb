@@ -8,6 +8,7 @@ describe User, type: :model do
   it { is_expected.to respond_to(:password) }
   it { is_expected.to respond_to(:password_confirmation) }
   it { is_expected.to respond_to(:articles) }
+  it { is_expected.to respond_to(:comments) }
 
   it { is_expected.to be_valid }
 
