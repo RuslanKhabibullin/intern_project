@@ -5,6 +5,6 @@ class ArticlePolicy
   end
 
   def manage?
-    @article.author_id == @user.id
+    @article.author == @user
   end
 end

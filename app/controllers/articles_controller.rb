@@ -4,6 +4,7 @@ class ArticlesController < ApplicationController
 
   expose_decorated(:article)
   expose_decorated(:articles) { articles_by_params.order(created_at: :desc) }
+  expose_decorated(:comments) { article.comments.order(:created_at) }
 
   def new
   end
@@ -17,6 +18,7 @@ class ArticlesController < ApplicationController
   end
 
   def show
+    @comment = article.comments.build
   end
 
   def index

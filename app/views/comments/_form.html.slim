@@ -1,0 +1,10 @@
+= simple_form_for(@comment) do |f|
+  = f.error_notification
+
+  = f.input :article_id, as: :hidden
+
+  .form-inputs
+    = f.input :text, input_html: { class: 'custom-form-control' }
+
+  .form-actions
+    = f.button :submit

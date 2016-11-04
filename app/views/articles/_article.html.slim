@@ -1,5 +1,5 @@
 .card.article
-  = link_to(article.author_username, user_path(article.author_id), class: 'article-author')
+  = link_to(article.author_username, user_path(article.author), class: 'article-author')
   p = article.formatted_creation_date
   h2 = link_to(article.title, article_path(article))
   = link_to('edit', edit_article_path(article)) if policy(article).manage?

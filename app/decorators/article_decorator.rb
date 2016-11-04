@@ -1,6 +1,6 @@
-class ArticleDecorator < Draper::Decorator
+class ArticleDecorator < BaseDecorator
   decorates_association :author
-  delegate :title, :content, :created_at, :updated_at, :author_id
+  delegate :id, :title, :content, :author_id
   # How to clearly use Decorated objects with forms?
   delegate :to_key, :persisted?, :errors
   delegate :username, to: :author, prefix: true
@@ -11,9 +11,5 @@ class ArticleDecorator < Draper::Decorator
     else
       object.content
     end
-  end
-
-  def formatted_creation_date
-    object.created_at.strftime('%d-%m-%Y')
   end
 end
