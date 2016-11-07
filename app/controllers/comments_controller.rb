@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
     if comment.save
       redirect_to article_path(comment.article), notice: 'Comment created'
     else
-      redirect_to article_path(comment.article)
+      redirect_to article_path(comment.article), alert: 'Comment error'
     end
   end
 
