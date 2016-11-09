@@ -9,8 +9,11 @@ class CommentsController < ApplicationController
   def create
     comment.user = current_user
     comment.article = article
-    comment.save
-    render 'articles/show'
+    if comment.save
+      respond_with(comment, location: article_path(article))
+    else
+      render 'articles/show'
+    end
   end
 
   def destroy
