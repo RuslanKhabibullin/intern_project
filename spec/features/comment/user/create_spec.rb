@@ -11,14 +11,13 @@ feature 'Comment create' do
   scenario 'User fill form with invalid data' do
     click_button('Create Comment')
 
-    expect(page).to have_content('Comment error')
+    expect(page).to have_content('problems')
   end
 
   scenario 'User fill form with valid data' do
     fill_form(:comment, comment_attributes)
     click_button('Create Comment')
 
-    expect(page).to have_content('successfully created')
     expect(page).to have_content(comment_attributes[:text])
   end
 end

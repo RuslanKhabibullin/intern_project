@@ -2,15 +2,15 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!
   before_action :authorize_user!, only: [:destroy]
 
-  expose_decorated(:comment)
+  expose_decorated(:article)
+  expose_decorated(:comments) { article.comments.order(:created_at) }
+  expose(:comment)
 
   def create
     comment.user = current_user
-    if comment.save
-      respond_with(comment, location: article_path(comment.article))
-    else
-      redirect_back(fallback_location: root_path, alert: 'Comment error')
-    end
+    comment.article = article
+    comment.save
+    render 'articles/show'
   end
 
   def destroy

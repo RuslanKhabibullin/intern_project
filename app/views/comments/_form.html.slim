@@ -1,7 +1,5 @@
-= simple_form_for(comment) do |f|
+= simple_form_for([article, comment]) do |f|
   = f.error_notification
-
-  = f.input :article_id, as: :hidden
 
   .form-inputs
     = f.input :text, input_html: { class: 'custom-form-control' }

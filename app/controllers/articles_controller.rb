@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
   expose_decorated(:article)
   expose_decorated(:articles) { articles_by_params.order(created_at: :desc) }
   expose_decorated(:comments) { article.comments.order(:created_at) }
-  expose_decorated(:comment) { article.comments.build }
+  expose(:comment) { article.comments.build }
 
   def new
   end
