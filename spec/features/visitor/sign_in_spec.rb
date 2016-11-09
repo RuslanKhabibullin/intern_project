@@ -9,7 +9,6 @@ feature 'Sign in' do
     fill_form(:user, :edit, email: user.email, password: 'mismatch')
     click_button 'SignIn'
 
-    expect(page).to have_selector('div.alert.alert-alert')
     expect(page).to have_content('Invalid')
   end
 
@@ -17,7 +16,6 @@ feature 'Sign in' do
     fill_form(:user, email: user.email, password: user.password)
     click_button 'SignIn'
 
-    expect(page).to have_selector('div.alert.alert-notice')
     expect(page).to have_content('Signed in')
     expect(page).to have_link('Log out', href: destroy_user_session_path)
   end

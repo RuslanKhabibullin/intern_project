@@ -24,6 +24,7 @@ gem 'decent_exposure', '3.0.0'
 # Draper Rails5 issue
 gem 'activemodel-serializers-xml', git: 'https://github.com/rails/activemodel-serializers-xml'
 gem 'pundit'
+gem 'responders'
 
 group :test do
   gem 'capybara'

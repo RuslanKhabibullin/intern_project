@@ -1,10 +1,10 @@
-class ArticlePolicy
+class ArticlePolicy < BasePolicy
   def initialize(user, article)
-    @user = user
+    self.user = user
     @article = article
   end
 
   def manage?
-    @article.author == @user
+    @article.author == user
   end
 end

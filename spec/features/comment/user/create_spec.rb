@@ -11,7 +11,6 @@ feature 'Comment create' do
   scenario 'User fill form with invalid data' do
     click_button('Create Comment')
 
-    expect(page).to have_selector('div.alert.alert-alert')
     expect(page).to have_content('Comment error')
   end
 
@@ -19,8 +18,7 @@ feature 'Comment create' do
     fill_form(:comment, comment_attributes)
     click_button('Create Comment')
 
-    expect(page).to have_selector('div.alert.alert-notice')
-    expect(page).to have_content('Comment created')
+    expect(page).to have_content('successfully created')
     expect(page).to have_content(comment_attributes[:text])
   end
 end

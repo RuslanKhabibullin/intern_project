@@ -5,23 +5,23 @@ class CommentsController < ApplicationController
   expose_decorated(:comment)
 
   def create
+    comment.user = current_user
     if comment.save
-      redirect_to article_path(comment.article), notice: 'Comment created'
+      respond_with(comment, location: article_path(comment.article))
     else
-      redirect_to article_path(comment.article), alert: 'Comment error'
+      redirect_back(fallback_location: root_path, alert: 'Comment error')
     end
   end
 
   def destroy
-    comment.destroy!
-    redirect_to article_path(comment.article), notice: 'Comment deleted'
+    comment.destroy
+    respond_with(comment, location: article_path(comment.article))
   end
 
   private
 
   def comment_params
-    comment_params = params.require(:comment).permit(:text, :article_id)
-    comment_params.merge(user_id: current_user.id)
+    params.require(:comment).permit(:text, :article_id)
   end
 
   def authorize_user!

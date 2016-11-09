@@ -17,8 +17,7 @@ feature 'Comment destroy' do
     create_comment
     click_link('delete')
 
-    expect(page).to have_selector('div.alert.alert-notice')
-    expect(page).to have_content('deleted')
+    expect(page).to have_content('successfully destroyed')
     expect(page).not_to have_content(comment_attributes[:text])
   end
 end

@@ -11,7 +11,7 @@ feature 'Create article' do
     fill_form(:article, article_attributes.except(:title))
     click_button('Create Article')
 
-    expect(page).to have_selector('div.alert.alert-danger')
+    expect(page).to have_content('problems')
   end
 
   scenario 'User create article with valid data' do
@@ -20,6 +20,6 @@ feature 'Create article' do
 
     expect(page).to have_content(article_attributes[:title])
     expect(page).to have_content(current_user.username)
-    expect(page).to have_content('Successfully created')
+    expect(page).to have_content('successfully created')
   end
 end

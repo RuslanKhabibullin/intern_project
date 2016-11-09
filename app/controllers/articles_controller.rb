@@ -11,11 +11,9 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    if article.save
-      redirect_to article, notice: 'Successfully created'
-    else
-      render :new
-    end
+    article.author = current_user
+    article.save
+    respond_with(article)
   end
 
   def show
@@ -28,16 +26,13 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    if article.update_attributes(article_params)
-      redirect_to article, notice: 'Successfully updated'
-    else
-      render :edit
-    end
+    article.update_attributes(article_params)
+    respond_with(article)
   end
 
   def destroy
     article.destroy!
-    redirect_to articles_path, notice: 'Successfully deleted'
+    respond_with(article, location: articles_path)
   end
 
   private
@@ -56,7 +51,6 @@ class ArticlesController < ApplicationController
   end
 
   def article_params
-    article_params = params.require(:article).permit(:title, :content)
-    article_params.merge(author_id: current_user.id)
+    params.require(:article).permit(:title, :content)
   end
 end

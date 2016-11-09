@@ -1,6 +1,7 @@
 class ArticleDecorator < BaseDecorator
   decorates_association :author
-  delegate :id, :title, :content, :author_id
+
+  delegate :title, :content
   delegate :username, to: :author, prefix: true
 
   def content_preview

@@ -1,10 +1,10 @@
-class UserPolicy
-  def initialize(current_user, user)
-    @current_user = current_user
-    @user = user
+class UserPolicy < BasePolicy
+  def initialize(user, requested_user)
+    self.user = user
+    @requested_user = requested_user
   end
 
   def manage?
-    @current_user == @user
+    user == @requested_user
   end
 end
