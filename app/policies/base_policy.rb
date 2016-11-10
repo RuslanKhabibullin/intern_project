@@ -1,6 +1,5 @@
 class BasePolicy
-  protected
-
   attr_accessor :user
 
+  protected :user
 end

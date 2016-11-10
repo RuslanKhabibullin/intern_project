@@ -10,7 +10,7 @@ class CommentsController < ApplicationController
     comment.user = current_user
     comment.article = article
     if comment.save
-      respond_with(comment, location: article_path(article))
+      respond_with(comment, location: article)
     else
       render 'articles/show'
     end
@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
 
   def destroy
     comment.destroy
-    respond_with(comment, location: article_path(comment.article))
+    respond_with(comment, location: article)
   end
 
   private
