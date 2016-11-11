@@ -8,5 +8,4 @@ class Article < ApplicationRecord
             uniqueness: { case_sensitive: false }
   validates :content, presence: true
   validates :author_id, presence: true
-
 end
