@@ -10,7 +10,6 @@ class Article < ApplicationRecord
   validates :author_id, presence: true
 
   def liked_by?(user)
-    user = user.decorated? ? user.to_model : user
     liked_users.include?(user)
   end
 end
