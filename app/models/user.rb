@@ -9,10 +9,6 @@ class User < ApplicationRecord
 
   validates :username, presence: true, length: { minimum: 2, maximum: 90 }
 
-  def like_toggle(article)
-    liked_article?(article) ? unlike(article) : like(article)
-  end
-
   def like(article)
     like = likes.build(article: article)
     likes << like
@@ -20,9 +16,5 @@ class User < ApplicationRecord
 
   def unlike(article)
     likes.find_by(article: article).try(:destroy)
-  end
-
-  def liked_article?(article)
-    liked_articles.include?(article)
   end
 end
