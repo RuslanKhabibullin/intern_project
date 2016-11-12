@@ -3,6 +3,7 @@ module ArticlesSorting
 
   included do
     SORTING_TYPES = %w(Newest Popularity).freeze
+    expose_decorated(:user)
   end
 
   private
@@ -22,12 +23,7 @@ module ArticlesSorting
   end
 
   def articles_by_params
-    if params[:user_id].nil?
-      Article.all
-    else
-      user = User.find_by(id: params[:user_id])
-      user.articles
-    end
+    user.persisted? ? user.articles : Article.all
   end
 
 end
