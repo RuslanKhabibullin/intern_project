@@ -5,11 +5,11 @@ class LikesController < ApplicationController
 
   def create
     current_user.like(article)
-    redirect_to(article)
+    redirect_back(fallback_location: article)
   end
 
   def destroy
     current_user.unlike(article)
-    redirect_to(article)
+    redirect_back(fallback_location: article)
   end
 end
