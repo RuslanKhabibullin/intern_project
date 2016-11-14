@@ -137,6 +137,11 @@ body {
 
 .user-mode-show {
   @extend  .article-mode-show;
+  .user-additional-data {
+    margin: 5% 0;
+    font-size: 1.4em;
+    color: lightslategrey;
+  }
   .user-link-block {
     a {
       display: block;
