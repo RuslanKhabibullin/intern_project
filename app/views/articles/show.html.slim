@@ -4,3 +4,9 @@
   h1 class="article-show-title" = article.title
   .article-content
     = article.content
+  hr class="article-separator"
+  = render(comments)
+  .comment-form
+    p New Comment
+    = render('comments/form')
+

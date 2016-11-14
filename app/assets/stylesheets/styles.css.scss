@@ -126,3 +126,30 @@ body {
   }
 }
 
+.comment {
+  margin-top: 2%;
+  padding: 0 2%;
+  .comment-author {
+    font-size: 1.3em;
+    font-weight: bold;
+  }
+  .comment-time {
+    font-size: 1.2em;
+    color: gray;
+    margin: 0 10px;
+  }
+  .comment-text {
+    margin-top: 2%;
+    font-size: 1.2em;
+  }
+}
+
+.comment-form {
+  margin-top: 5%;
+  padding: 0 2%;
+  p {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+}
+

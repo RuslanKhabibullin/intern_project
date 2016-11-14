@@ -21,7 +21,6 @@ feature 'Reset password' do
     fill_and_submit_reset_form('wrongEmail@email.com')
 
     expect(page).to have_content('problems')
-    expect(page).to have_selector('div.alert.alert-danger')
   end
 
   scenario 'Visitor resets his password' do

@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
-  get 'users/show'
-
   devise_for :users, controllers: { registrations: 'users/registrations' }
 
-  resources :articles
+  resources :articles do
+    resources :comments, only: [:create, :destroy]
+  end
 
   resources :users, only: [:show] do
     resources :articles, only: [:index]

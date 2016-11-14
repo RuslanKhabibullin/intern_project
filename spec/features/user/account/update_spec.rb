@@ -14,13 +14,13 @@ feature 'Update account' do
   scenario 'User update profile with invalid data' do
     fill_and_submit_edit_form(password: 'newPass2', password_confirmation: 'error')
 
-    expect(page).to have_selector('div.alert.alert-danger')
+    expect(page).to have_content('problems')
   end
 
   scenario 'User update profile with valid data' do
     fill_and_submit_edit_form(username: 'newUsername')
 
     expect(current_user.reload.username).eql? 'newUsername'
-    expect(page).to have_selector('div.alert.alert-notice')
+    expect(page).to have_content('updated successfully')
   end
 end

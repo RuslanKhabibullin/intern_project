@@ -11,14 +11,14 @@ feature 'Update article' do
     fill_form(:article, :edit, title: '')
     click_button('Update Article')
 
-    expect(page).to have_selector('div.alert.alert-danger')
+    expect(page).to have_content('problems')
   end
 
   scenario 'Author update article with valid data' do
     fill_form(:article, :edit, title: 'newTitle')
     click_button('Update Article')
 
-    expect(page).to have_content('Successfully updated')
+    expect(page).to have_content('successfully updated')
     expect(page).to have_content('newTitle')
   end
 end
