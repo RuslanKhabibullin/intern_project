@@ -21,4 +21,10 @@ describe Article, type: :model do
   it { is_expected.to validate_uniqueness_of(:title).case_insensitive }
 
   it { is_expected.to be_valid }
+
+  context 'when user like article' do
+    before { author.like(article) }
+
+    specify { expect(article.likes_count).eql?(1) }
+  end
 end

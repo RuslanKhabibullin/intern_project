@@ -25,6 +25,7 @@ gem 'decent_exposure', '3.0.0'
 gem 'activemodel-serializers-xml', git: 'https://github.com/rails/activemodel-serializers-xml'
 gem 'pundit'
 gem 'responders'
+gem 'seedbank'
 
 group :test do
   gem 'capybara'
