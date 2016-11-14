@@ -1,10 +1,5 @@
-class CommentPolicy < BasePolicy
-  def initialize(user, comment)
-    self.user = user
-    @comment = comment
-  end
-
+class CommentPolicy < ApplicationPolicy
   def manage?
-    @comment.user == user
+    record.user == user
   end
 end
