@@ -1,6 +1,10 @@
 .card.user.user-mode-show
   h1 = user.username
+  .user-additional-data
+    p <strong>Email:</strong> #{ user.email }
+    p <strong>Articles written:</strong> #{ user.articles_count }
+    p <strong>Comments written:</strong> #{ user.comments_count }
+    p <strong>Registered at:</strong> #{ user.formatted_creation_date }
   .user-link-block
     = link_to('User articles', user_articles_path(user))
-
 

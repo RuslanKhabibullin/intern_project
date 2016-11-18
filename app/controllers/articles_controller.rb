@@ -1,9 +1,11 @@
 class ArticlesController < ApplicationController
+  include ArticlesSorting
+
   before_action :authenticate_user!
   before_action :authorize_user!, only: [:edit, :update, :destroy]
 
   expose_decorated(:article)
-  expose_decorated(:articles) { articles_by_params.order(created_at: :desc) }
+  expose_decorated(:articles) { sorted_articles }
   expose_decorated(:comments) { article.comments.order(:created_at) }
   expose(:comment) { article.comments.build }
 
@@ -39,15 +41,6 @@ class ArticlesController < ApplicationController
 
   def authorize_user!
     authorize(article, :manage?)
-  end
-
-  def articles_by_params
-    if params[:user_id].nil?
-      Article.all
-    else
-      user = User.find_by(id: params[:user_id])
-      user.articles
-    end
   end
 
   def article_params

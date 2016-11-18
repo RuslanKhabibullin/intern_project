@@ -4,6 +4,7 @@
   h1 class="article-show-title" = article.title
   .article-content
     = article.content
+  = render('shared/likes_block', article: article)
   hr class="article-separator"
   = render(comments)
   .comment-form

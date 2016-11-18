@@ -3,7 +3,8 @@ require 'rails_helper'
 describe Comment, type: :model do
   subject(:comment) do
     attributes = attributes_for(:comment)
-    attributes.merge!(user: create(:user), article: create(:article))
+    attributes[:user] = create(:user)
+    attributes[:article] = create(:article)
     described_class.new(attributes)
   end
 
@@ -14,5 +15,5 @@ describe Comment, type: :model do
   it { is_expected.to validate_presence_of(:user_id) }
   it { is_expected.to validate_presence_of(:text) }
 
-  it { should be_valid }
+  it { is_expected.to be_valid }
 end

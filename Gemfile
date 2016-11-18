@@ -22,9 +22,11 @@ gem 'draper', github: 'audionerd/draper', branch: 'rails5'
 gem 'decent_decoration', '~> 0.1.0'
 gem 'decent_exposure', '3.0.0'
 # Draper Rails5 issue
-gem 'activemodel-serializers-xml', git: 'https://github.com/rails/activemodel-serializers-xml'
+gem 'activemodel-serializers-xml'
 gem 'pundit'
+gem 'interactor'
 gem 'responders'
+gem 'seedbank'
 
 group :test do
   gem 'capybara'

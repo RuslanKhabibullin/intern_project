@@ -1,7 +1,7 @@
 class ArticleDecorator < BaseDecorator
   decorates_association :author
 
-  delegate :title, :content
+  delegate :title, :content, :likes_count
   delegate :username, to: :author, prefix: true
 
   def content_preview
@@ -10,5 +10,14 @@ class ArticleDecorator < BaseDecorator
     else
       object.content
     end
+  end
+
+  def liked_by?(user)
+    user = user.to_model
+    object.liked_by?(user)
+  end
+
+  def user_like(user)
+    object.likes.find_by(user: user)
   end
 end
