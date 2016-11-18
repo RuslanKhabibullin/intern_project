@@ -1,15 +1,11 @@
 class UserDecorator < BaseDecorator
-  delegate :id, :username, :email
+  delegate :id, :username, :email, :persisted?
 
-  def exist?
-    object.id.present?
+  def articles_count
+    object.articles.count
   end
 
-  def articles_length
-    object.articles.length
-  end
-
-  def comments_length
-    object.comments.length
+  def comments_count
+    object.comments.count
   end
 end

@@ -10,6 +10,6 @@ feature 'Create like' do
   scenario 'User like article' do
     click_button 'Like'
     expect(page).to have_content('Likes: 1')
-    expect(page).to have_link('Unlike', href: article_unlike_path(article))
+    expect(page).to have_link('Unlike')
   end
 end

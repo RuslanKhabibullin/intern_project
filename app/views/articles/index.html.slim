@@ -2,7 +2,7 @@
   = render(articles)
 
 .col-md-3.card.side-menu
-  - if user.exist?
+  - if user.persisted?
     = render('shared/form_article_sort', path: user_articles_path(user))
   - else
     = render('shared/form_article_sort', path: articles_path)

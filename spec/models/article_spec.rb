@@ -23,7 +23,10 @@ describe Article, type: :model do
   it { is_expected.to be_valid }
 
   context 'when user like article' do
-    before { author.like(article) }
+    before do
+      article.save
+      create(:like, user: author, article: article)
+    end
 
     specify { expect(article.likes_count).eql?(1) }
   end
