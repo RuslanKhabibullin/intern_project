@@ -1,15 +1,24 @@
 @import "bootstrap-sprockets";
-@import 'bootstrap';
+@import "bootstrap";
+
+$lightslategrey: #789;
+$lightgrey: #f7f7f7;
+$grey: #808080;
+$white: #fff;
+$shadow-darkest: rgba(0, 0, 0, .48);
+$shadow-dark: rgba(0, 0, 0, .5);
+$shadow-light: rgba(0, 0, 0, .24);
+$dark-blue: #37474f;
 
 #logo {
+  color: $lightslategrey;
   font-size: 1.7em;
-  color: lightslategrey;
   font-weight: bold;
   text-align: center;
 }
 
 body {
-  background: #F7F7F7;
+  background: $lightgrey;
 }
 
 .alert-notice {
@@ -21,15 +30,8 @@ body {
 }
 
 .mainbox {
-  font-weight: normal;
   margin-top: 30px;
-
-  .form_additional_links {
-    float: right;
-    position: relative;
-    font-size: 0.95em;
-    top: -20px;
-  }
+  font-weight: normal;
 
   .panel-body {
     padding-top: 25px;
@@ -38,22 +40,17 @@ body {
   .checkbox {
     margin-left: 10%;
   }
-
-  .form_input {
-    margin-top: 5%;
-    margin-bottom: 25px;
-  }
 }
 
 .card {
-  background: white;
-  box-shadow: 0 3px 3px rgba(0,0,0,.48),
-              0 0 3px rgba(0,0,0,.24);
+  background: $white;
+  box-shadow: 0 3px 3px $shadow-darkest, 0 0 3px $shadow-light;
 }
 
-.article {
-  margin: 0 4% 20px;
+.article,
+.user {
   min-height: 160px;
+  margin: 0 4% 20px;
   padding: 10px 15px;
 
   .article-author {
@@ -61,9 +58,9 @@ body {
     font-weight: bold;
   }
 
-  .article-title {
+  %article-title {
+    color: $dark-blue;
     text-align: center;
-    color: #37474F;
   }
 
   .article-content {
@@ -72,43 +69,46 @@ body {
   }
 
   .article-show-title {
-    @extend .article-title;
+    @extend %article-title;
     font-size: 2.3em;
     font-weight: bold;
   }
 
   .article-likes {
     margin: 25px auto 15px;
+
     form {
       display: inline;
     }
+
     span {
+      color: $lightslategrey;
       font-size: 1.5em;
-      color: lightslategrey
     }
+
     .likes-count {
-      margin: auto 10px;
-      font-size: 1.4em;
-      color: lightslategrey;
-      font-weight: bold;
       display: inline;
+      margin: auto 10px;
+      color: $lightslategrey;
+      font-size: 1.4em;
+      font-weight: bold;
     }
   }
 }
 
 .article-form {
-  padding: 20px;
   width: 85%;
+  padding: 20px;
 }
 
-.article-mode-show {
+.article-mode-show,
+.user-mode-show {
   padding: 30px;
 }
 
 .header {
-  background: white;
-  box-shadow: 0 2px 3px rgba(0,0,0,.48),
-              0 2px 10px rgba(0,0,0,.24);
+  background: $white;
+  box-shadow: 0 2px 3px $shadow-darkest, 0 0 3px $shadow-light
 }
 
 .side-menu {
@@ -117,32 +117,30 @@ body {
 }
 
 .custom-form-control {
-  border: none;
-  border-radius: 0;
-  box-shadow: 0 0 2px rgba(0,0,0,.5);
-  height: 35px;
-  font-size: 1.2em;
-  padding: 5px 15px;
   width: 300px;
+  height: 35px;
+  padding: 5px 15px;
+  border: 0;
+  border-radius: 0;
+  font-size: 1.2em;
+  box-shadow: 0 0 2px $shadow-dark;
 
   &:focus {
     outline: none;
-    box-shadow: 0 0 2px rgba(0,0,0,.5);
+    box-shadow: 0 0 2px $shadow-dark;
   }
-}
-
-.user {
-  @extend .article
 }
 
 .user-mode-show {
-  @extend  .article-mode-show;
+
   .user-additional-data {
     margin: 5% 0;
+    color: $lightslategrey;
     font-size: 1.4em;
-    color: lightslategrey;
   }
+
   .user-link-block {
+
     a {
       display: block;
       font-size: 1.2em;
@@ -153,15 +151,18 @@ body {
 .comment {
   margin-top: 2%;
   padding: 0 2%;
+
   .comment-author {
     font-size: 1.3em;
     font-weight: bold;
   }
+
   .comment-time {
-    font-size: 1.2em;
-    color: gray;
     margin: 0 10px;
+    color: $grey;
+    font-size: 1.2em;
   }
+
   .comment-text {
     margin-top: 2%;
     font-size: 1.2em;
@@ -171,6 +172,7 @@ body {
 .comment-form {
   margin-top: 5%;
   padding: 0 2%;
+
   p {
     font-size: 1.5em;
     font-weight: bold;
@@ -179,9 +181,10 @@ body {
 
 .sort-form {
   margin-bottom: 10%;
+
   .btn-sort {
-    margin-top: 10%;
     width: 99%;
+    margin-top: 10%;
   }
 }
 
