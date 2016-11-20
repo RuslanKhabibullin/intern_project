@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.0'
@@ -22,6 +21,7 @@ gem 'draper', github: 'audionerd/draper', branch: 'rails5'
 gem 'decent_decoration', '~> 0.1.0'
 gem 'decent_exposure', '3.0.0'
 gem 'pundit'
+gem 'kaminari', github: 'amatsuda/kaminari'
 gem 'interactor'
 gem 'seedbank'
 gem 'responders'

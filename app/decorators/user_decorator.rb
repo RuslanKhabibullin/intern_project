@@ -1,4 +1,4 @@
-class UserDecorator < BaseDecorator
+class UserDecorator < ApplicationDecorator
   delegate :id, :username, :email, :persisted?
 
   def articles_count
