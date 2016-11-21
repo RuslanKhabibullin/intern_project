@@ -252,7 +252,6 @@ GEM
     scss_lint (0.50.3)
       rake (>= 0.9, < 12)
       sass (~> 3.4.20)
-    seedbank (0.4.0)
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
     simple_form (3.3.1)
@@ -351,7 +350,6 @@ DEPENDENCIES
   rubocop-rspec
   sass-rails (~> 5.0)
   scss_lint
-  seedbank
   shoulda-matchers
   simple_form
   slim

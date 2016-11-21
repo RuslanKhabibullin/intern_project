@@ -23,7 +23,6 @@ gem 'decent_exposure', '3.0.0'
 gem 'pundit'
 gem 'kaminari', github: 'amatsuda/kaminari'
 gem 'interactor'
-gem 'seedbank'
 gem 'responders'
 # Draper Rails5 issue
 gem 'activemodel-serializers-xml'

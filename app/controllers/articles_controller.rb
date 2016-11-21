@@ -1,12 +1,12 @@
 class ArticlesController < ApplicationController
   include ArticlesSorting
+  include CommentsPagination
 
   before_action :authenticate_user!
   before_action :authorize_user!, only: [:edit, :update, :destroy]
 
   expose_decorated(:article)
-  expose_decorated(:articles) { sorted_articles.page(params[:page]).per(2) }
-  expose_decorated(:comments) { paginated_comments }
+  expose_decorated(:articles) { sorted_articles.page(params[:page]).per(4) }
   expose(:comment) { article.comments.build }
 
   def new
@@ -45,10 +45,5 @@ class ArticlesController < ApplicationController
 
   def article_params
     params.require(:article).permit(:title, :content)
-  end
-
-  def paginated_comments
-    comments = article.comments.order(:created_at)
-    comments.page(params[:page]).per(15)
   end
 end

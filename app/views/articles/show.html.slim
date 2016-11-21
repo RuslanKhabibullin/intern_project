@@ -7,6 +7,8 @@
   = render('shared/likes_block', article: article)
   hr class="article-separator"
   = render(comments)
+  = paginate(comments)
+  hr class="article-separator"
   .comment-form
     p New Comment
     = render('comments/form')
