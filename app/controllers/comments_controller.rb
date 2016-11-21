@@ -1,9 +1,10 @@
 class CommentsController < ApplicationController
+  include CommentsPagination
+
   before_action :authenticate_user!
   before_action :authorize_user!, only: [:destroy]
 
   expose_decorated(:article)
-  expose_decorated(:comments) { article.comments.order(:created_at) }
   expose(:comment)
 
   def create

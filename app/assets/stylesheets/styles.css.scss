@@ -10,23 +10,16 @@ $shadow-dark: rgba(0, 0, 0, .5);
 $shadow-light: rgba(0, 0, 0, .24);
 $dark-blue: #37474f;
 
-#logo {
-  color: $lightslategrey;
-  font-size: 1.7em;
-  font-weight: bold;
-  text-align: center;
-}
-
 body {
   background: $lightgrey;
 }
 
 .alert-notice {
-  @extend .alert-info
+  @extend .alert-info;
 }
 
 .alert-alert {
-  @extend .alert-warning
+  @extend .alert-warning;
 }
 
 .mainbox {
@@ -108,7 +101,7 @@ body {
 
 .header {
   background: $white;
-  box-shadow: 0 2px 3px $shadow-darkest, 0 0 3px $shadow-light
+  box-shadow: 0 2px 3px $shadow-darkest, 0 0 3px $shadow-light;
 }
 
 .side-menu {
@@ -129,6 +122,10 @@ body {
     outline: none;
     box-shadow: 0 0 2px $shadow-dark;
   }
+}
+
+.wide {
+  width: 100%;
 }
 
 .user-mode-show {
@@ -186,5 +183,10 @@ body {
     width: 99%;
     margin-top: 10%;
   }
+}
+
+.pagination-block {
+  margin: 4% 0;
+  text-align: center;
 }
 

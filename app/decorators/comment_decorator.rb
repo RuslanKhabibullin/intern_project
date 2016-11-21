@@ -1,4 +1,4 @@
-class CommentDecorator < BaseDecorator
+class CommentDecorator < ApplicationDecorator
   decorates_association :user
   decorates_association :article
 

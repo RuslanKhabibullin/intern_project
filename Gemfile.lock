@@ -1,4 +1,19 @@
 GIT
+  remote: git://github.com/amatsuda/kaminari.git
+  revision: 7176005a676682887f468472c7a6e4cac485e087
+  specs:
+    kaminari (1.0.0.alpha)
+      activesupport (>= 4.1.0)
+      kaminari-actionview
+      kaminari-activerecord
+      kaminari-core
+    kaminari-actionview (0.1.0)
+      actionview
+    kaminari-activerecord (0.1.0)
+      activerecord
+    kaminari-core (0.1.0)
+
+GIT
   remote: git://github.com/audionerd/draper.git
   revision: e816e0e5876b76c648c0928f1c3f2aa2c7a3d1f2
   branch: rails5
@@ -237,7 +252,6 @@ GEM
     scss_lint (0.50.3)
       rake (>= 0.9, < 12)
       sass (~> 3.4.20)
-    seedbank (0.4.0)
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
     simple_form (3.3.1)
@@ -323,6 +337,7 @@ DEPENDENCIES
   interactor
   jbuilder (~> 2.5)
   jquery-rails
+  kaminari!
   listen (~> 3.0.5)
   pg (~> 0.18)
   puma (~> 3.0)
@@ -335,7 +350,6 @@ DEPENDENCIES
   rubocop-rspec
   sass-rails (~> 5.0)
   scss_lint
-  seedbank
   shoulda-matchers
   simple_form
   slim

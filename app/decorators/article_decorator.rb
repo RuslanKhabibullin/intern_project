@@ -1,4 +1,4 @@
-class ArticleDecorator < BaseDecorator
+class ArticleDecorator < ApplicationDecorator
   decorates_association :author
 
   delegate :title, :content, :likes_count

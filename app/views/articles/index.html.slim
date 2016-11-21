@@ -1,5 +1,6 @@
 .col-md-9
   = render(articles)
+  = paginate(articles)
 
 .col-md-3.card.side-menu
   - if user.persisted?
