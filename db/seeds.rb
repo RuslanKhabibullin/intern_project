@@ -1,5 +1,5 @@
-commenter = User.create(email: 'ruslan@email.com', username: 'willfarm',
-                        password: 'muchPass1', password_confirmation: 'muchPass1')
+commenter = User.create(email: 'user_1@example.com', username: 'user_1',
+                        password: '123456', password_confirmation: '123456')
 
 3.times { FactoryGirl.create(:user) }
 
