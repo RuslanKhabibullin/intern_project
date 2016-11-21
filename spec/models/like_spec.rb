@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Like, type: :model do
   subject(:like) do

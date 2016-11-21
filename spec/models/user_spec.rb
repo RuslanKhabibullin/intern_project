@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe User, type: :model do
   subject(:user) { described_class.new(attributes_for(:user)) }
@@ -19,16 +19,16 @@ describe User, type: :model do
   it { is_expected.to validate_length_of(:username).is_at_least(2).is_at_most(90) }
   it { is_expected.to validate_length_of(:password).is_at_least(6).is_at_most(128) }
 
-  describe 'password' do
-    context 'when confirmation mismatch' do
-      before { user.password_confirmation = 'mismatch' }
+  describe "password" do
+    context "when confirmation mismatch" do
+      before { user.password_confirmation = "mismatch" }
 
       it { is_expected.not_to be_valid }
     end
   end
 
-  describe 'email' do
-    context 'when format is invalid' do
+  describe "email" do
+    context "when format is invalid" do
       let(:addresses) { %w(user@foo,com user_at_foo.org example.user@foo. foo@bar_baz.com foo@bar+baz.com) }
 
       specify do
@@ -39,7 +39,7 @@ describe User, type: :model do
       end
     end
 
-    context 'when format is valid' do
+    context "when format is valid" do
       let(:addresses) { %w(user@foo.COM A_US-ER@f.b.org frst.lst@foo.jp a+b@baz.cn) }
 
       specify do

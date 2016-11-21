@@ -1,9 +1,9 @@
-ENV['RAILS_ENV'] ||= 'test'
+ENV["RAILS_ENV"] ||= "test"
 
-require File.expand_path('../../config/environment', __FILE__)
-require 'spec_helper'
-require 'rspec/rails'
-Dir[Rails.root.join('spec/support/**/*.rb')].each { |file| require file }
+require File.expand_path("../../config/environment", __FILE__)
+require "spec_helper"
+require "rspec/rails"
+Dir[Rails.root.join("spec/support/**/*.rb")].each { |file| require file }
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|

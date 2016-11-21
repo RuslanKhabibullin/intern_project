@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
     if comment.save
       respond_with(comment, location: article)
     else
-      render 'articles/show'
+      render "articles/show"
     end
   end
 

@@ -1,4 +1,4 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe Article, type: :model do
   subject(:article) do
@@ -22,7 +22,7 @@ describe Article, type: :model do
 
   it { is_expected.to be_valid }
 
-  context 'when user like article' do
+  context "when user like article" do
     before do
       article.save
       create(:like, user: author, article: article)

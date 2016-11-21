@@ -1,29 +1,29 @@
-shared_examples 'a paginated resource' do
+shared_examples "a paginated resource" do
   before do
     resource_creation
     visit path
   end
 
-  describe 'Visit paginated page' do
-    context 'first page' do
+  describe "Visit paginated page" do
+    context "first page" do
       it 'have "Next" link' do
-        expect(page).to have_link('Next >')
+        expect(page).to have_link("Next >")
       end
 
       it 'have "Last" link' do
-        expect(page).to have_link('Last >>')
+        expect(page).to have_link("Last >>")
       end
     end
 
-    context 'last page' do
-      before { click_link('Last >>') }
+    context "last page" do
+      before { click_link("Last >>") }
 
       it 'have "Prev" link' do
-        expect(page).to have_link('< Prev')
+        expect(page).to have_link("< Prev")
       end
 
       it 'have "First" link' do
-        expect(page).to have_link('<< First')
+        expect(page).to have_link("<< First")
       end
     end
   end

@@ -19,11 +19,10 @@ module ArticlesSorting
   end
 
   def attribute_by_type(type)
-    type.eql?('Newest') ? :created_at : :likes_count
+    type.eql?("Newest") ? :created_at : :likes_count
   end
 
   def articles_by_params
     user.persisted? ? user.articles : Article.all
   end
-
 end

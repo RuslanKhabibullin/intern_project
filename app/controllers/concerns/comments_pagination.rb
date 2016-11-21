@@ -11,5 +11,4 @@ module CommentsPagination
     comments = article.comments.order(:created_at)
     comments.page(params[:page]).per(10)
   end
-
 end

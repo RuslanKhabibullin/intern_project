@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   include CommentsPagination
 
   before_action :authenticate_user!
-  before_action :authorize_user!, only: [:edit, :update, :destroy]
+  before_action :authorize_user!, only: %i(edit update destroy)
 
   expose_decorated(:article)
   expose_decorated(:articles) { sorted_articles.page(params[:page]).per(4) }
