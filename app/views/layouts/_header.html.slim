@@ -2,7 +2,7 @@ header
   nav class="navbar navbar-default navbar-static-top header"
     .container
       .navbar-header
-        = link_to('ShMedium', root_path, class: 'navbar-brand logo')
+        = link_to("ShMedium", root_path, class: "navbar-brand logo")
 
       - if user_signed_in?
-        = render('layouts/user_navbar')
+        = render("layouts/user_navbar")

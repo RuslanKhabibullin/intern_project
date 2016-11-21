@@ -7,11 +7,11 @@
 
       .panel-body
         = simple_form_for(resource, as: resource_name, url: password_path(resource_name),
-                html: { method: :post, class: 'form-horizontal' }, wrapper: :horizontal_form) do |f|
+                html: { method: :post, class: "form-horizontal" }, wrapper: :horizontal_form) do |f|
           = f.error_notification
           .form-inputs
             = f.input :email, required: true, autofocus: true
           .form-actions
             .col-sm-7.col-sm-offset-5.controls
-              = f.button :submit, 'Send instructions'
-        = render 'devise/shared/links'
+              = f.button :submit, "Send instructions"
+        = render "devise/shared/links"
