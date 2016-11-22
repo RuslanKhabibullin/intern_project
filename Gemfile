@@ -24,6 +24,7 @@ gem "pundit"
 gem "kaminari", github: "amatsuda/kaminari"
 gem "interactor"
 gem "responders"
+gem "omniauth-google-oauth2"
 # Draper Rails5 issue
 gem "activemodel-serializers-xml"
 
