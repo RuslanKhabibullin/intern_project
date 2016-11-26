@@ -10,7 +10,7 @@ feature "Show account profile" do
   end
 
   scenario "Page contain user stats" do
-    expect(page).to have_content("Articles written: 1")
-    expect(page).to have_content("Comments written: 1")
+    expect(page).to have_content "Articles written: 1"
+    expect(page).to have_content "Comments written: 1"
   end
 end

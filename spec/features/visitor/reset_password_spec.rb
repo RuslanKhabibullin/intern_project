@@ -20,19 +20,19 @@ feature "Reset password" do
   scenario "Visitor fill reset form with invalid email" do
     fill_and_submit_reset_form("wrongEmail@email.com")
 
-    expect(page).to have_content("problems")
+    expect(page).to have_content "problems"
   end
 
   scenario "Visitor resets his password" do
     fill_and_submit_reset_form(user.email)
 
-    open_email(user.email)
+    open_email user.email
 
-    expect(current_email).to have_subject("Reset password instructions")
+    expect(current_email).to have_subject "Reset password instructions"
 
     visit_in_email("Change my password")
     update_user
 
-    expect(page).to have_content("Your password has been changed successfully")
+    expect(page).to have_content "Your password has been changed successfully"
   end
 end

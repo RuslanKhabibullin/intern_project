@@ -10,7 +10,7 @@ feature "Destroy Article" do
   scenario "Author article destroy" do
     click_link("delete", href: article_path(article))
 
-    expect(page).not_to have_content(article.title)
-    expect(page).to have_content("successfully destroyed")
+    expect(page).not_to have_content article.title
+    expect(page).to have_content "successfully destroyed"
   end
 end

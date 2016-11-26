@@ -12,7 +12,7 @@ feature "Unlike" do
 
   scenario "User unlike article" do
     click_link "Unlike"
-    expect(page).to have_content("Likes: 0")
-    expect(page).to have_button("Like")
+    expect(page).to have_content "Likes: 0"
+    expect(page).to have_button "Like"
   end
 end
