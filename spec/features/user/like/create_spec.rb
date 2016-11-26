@@ -8,8 +8,7 @@ feature "Create like" do
   before { visit article_path(article) }
 
   scenario "User like article" do
-    click_button "Like"
+    click_link "like"
     expect(page).to have_content "Likes: 1"
-    expect(page).to have_link "Unlike"
   end
 end

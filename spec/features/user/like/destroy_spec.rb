@@ -7,12 +7,11 @@ feature "Unlike" do
 
   before do
     visit article_path(article)
-    click_button "Like"
+    click_link "like"
   end
 
   scenario "User unlike article" do
-    click_link "Unlike"
+    click_link "unlike"
     expect(page).to have_content "Likes: 0"
-    expect(page).to have_button "Like"
   end
 end
