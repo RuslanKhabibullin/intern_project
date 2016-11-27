@@ -18,6 +18,6 @@ class LikesController < ApplicationController
   private
 
   def current_user_like
-    redirect_back(fallback_location: article) if like.user != current_user
+    redirect_back(fallback_location: article) unless like.user == current_user
   end
 end
