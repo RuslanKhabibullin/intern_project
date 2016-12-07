@@ -7,8 +7,4 @@ class ArticleDecorator < ApplicationDecorator
   def content_preview
     h.truncate(object.content, length: 250, separator: " ")
   end
-
-  def user_like(user)
-    object.likes.find_by(user: user)
-  end
 end

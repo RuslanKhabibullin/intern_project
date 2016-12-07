@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :articles do
     resources :comments, only: %i(create destroy)
-    resources :likes, only: %i(create destroy)
+    resource :like, only: %i(create destroy)
   end
 
   resources :users, only: [:show] do
