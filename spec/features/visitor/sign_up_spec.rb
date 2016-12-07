@@ -16,7 +16,6 @@ feature "Sign up" do
     fill_form(:user, user_attributes)
     click_button "SignUp"
 
-    expect(page).to have_content "signed up successfully"
     expect(page).to have_link("Log out", href: destroy_user_session_path)
   end
 end

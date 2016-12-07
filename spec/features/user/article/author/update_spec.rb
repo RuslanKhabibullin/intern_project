@@ -19,6 +19,5 @@ feature "Update article" do
     click_button "Update Article"
 
     expect(page).to have_content "successfully updated"
-    expect(page).to have_content "newTitle"
   end
 end

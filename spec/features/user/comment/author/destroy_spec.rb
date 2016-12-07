@@ -18,6 +18,5 @@ feature "Comment destroy" do
     click_link("delete")
 
     expect(page).to have_content("successfully destroyed")
-    expect(page).not_to have_content(comment_attributes[:text])
   end
 end

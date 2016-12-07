@@ -17,11 +17,11 @@ gem "slim"
 
 # Other gems
 gem "devise"
-gem "draper", github: "audionerd/draper", branch: "rails5"
+gem "draper", git: "https://github.com/audionerd/draper", branch: "rails5"
 gem "decent_decoration", "~> 0.1.0"
 gem "decent_exposure", "3.0.0"
 gem "pundit"
-gem "kaminari", github: "amatsuda/kaminari"
+gem "kaminari", git: "https://github.com/amatsuda/kaminari"
 gem "interactor"
 gem "responders"
 gem "seedbank"
@@ -56,6 +56,7 @@ group :development do
   gem "foreman", require: false
   gem "listen", "~> 3.0.5"
   gem "spring"
+  gem "spring-commands-rspec"
   gem "spring-watcher-listen", "~> 2.0.0"
   gem "slim-rails"
   gem "web-console"

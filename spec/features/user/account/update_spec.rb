@@ -20,7 +20,6 @@ feature "Update account" do
   scenario "User update profile with valid data" do
     fill_and_submit_edit_form(username: "newUsername")
 
-    expect(current_user.reload.username).eql? "newUsername"
     expect(page).to have_content "updated successfully"
   end
 end

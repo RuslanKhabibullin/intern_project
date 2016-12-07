@@ -18,8 +18,6 @@ feature "Create article" do
     fill_form(:article, article_attributes)
     click_button "Create Article"
 
-    expect(page).to have_content article_attributes[:title]
-    expect(page).to have_content current_user.username
     expect(page).to have_content "successfully created"
   end
 end
