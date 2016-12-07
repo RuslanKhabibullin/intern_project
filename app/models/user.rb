@@ -1,6 +1,11 @@
 class User < ApplicationRecord
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable,
-         :validatable, :omniauthable, omniauth_providers: %i(google_oauth2)
+  devise :database_authenticatable,
+    :registerable,
+    :recoverable,
+    :rememberable,
+    :validatable,
+    :omniauthable,
+    omniauth_providers: %i(google_oauth2)
 
   has_many :articles, foreign_key: "author_id", dependent: :destroy
   has_many :comments, dependent: :destroy
