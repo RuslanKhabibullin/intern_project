@@ -9,6 +9,6 @@ class Article < ApplicationRecord
   validates :author_id, presence: true
 
   def liked_by?(user)
-    liked_users.include?(user)
+    liked_users.include? user
   end
 end
