@@ -1,6 +1,5 @@
 class LikesController < ApplicationController
   before_action :authenticate_user!
-  before_action :article_liked?, only: %i(destroy)
 
   expose(:article)
   expose(:like) { article.likes.find_by(user: current_user) }
@@ -11,13 +10,7 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    like.destroy
+    like&.destroy
     redirect_back(fallback_location: article)
-  end
-
-  private
-
-  def article_liked?
-    redirect_back(fallback_location: article) unless like
   end
 end
