@@ -3,7 +3,7 @@
     .panel.panel-default
 
       .panel-heading
-        .panel-title Authorization
+        .panel-title #{t "users.authorization"}
 
       .panel-body
         = simple_form_for(resource, as: resource_name, url: session_path(resource_name),
@@ -12,7 +12,6 @@
             = f.input :email, required: false, autofocus: true
             = f.input :password, required: false
             = f.input :remember_me, class: "checkbox", as: :boolean if devise_mapping.rememberable?
-          .form-actions
-            .col-sm-7.col-sm-offset-5.controls
-              = f.button :submit, "SignIn"
+          .form-actions.col-sm-7.col-sm-offset-5.controls
+            = f.button :submit, t("users.authorization")
         = render "devise/shared/links"

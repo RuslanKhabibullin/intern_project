@@ -1,0 +1,14 @@
+ru:
+  helpers:
+    submit:
+      user:
+        create: "Регистрация"
+        update: "Обновить"
+  simple_form:
+    'yes': Yes
+    'no': No
+    required:
+      text: "Обязательное поле"
+      mark: '*'
+    error_notification:
+      default_message: "Пожалуйста разрешите следующие проблемы:"
