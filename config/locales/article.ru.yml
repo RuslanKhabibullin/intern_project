@@ -7,3 +7,16 @@ ru:
       article:
         title: "Заголовок"
         content: "Содержимое"
+  views:
+     article:
+      new: "Создать новую статью"
+      delete: "Удалить"
+      create:
+        title: "Создать статью"
+      edit:
+        title: "Редактирование: %{title}"
+      sorting:
+        types:
+          newest: "Дата создания"
+          popularity: "Популярность"
+        sort: "Сортировать"
