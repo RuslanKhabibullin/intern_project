@@ -1,0 +1,9 @@
+ru:
+  activerecord:
+    models:
+      article: "Статья"
+  simple_form:
+    labels:
+      article:
+        title: "Заголовок"
+        content: "Содержимое"

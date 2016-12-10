@@ -4,6 +4,9 @@ ru:
       user:
         create: "Регистрация"
         update: "Обновить"
+      article:
+        create: "Создать статью"
+        update: "Обновить статью"
   simple_form:
     'yes': Yes
     'no': No

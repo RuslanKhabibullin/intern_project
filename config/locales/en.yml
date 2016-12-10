@@ -1,5 +1,23 @@
 en:
   views:
+    edit: 'Edit'
+    article:
+      new: "Create new article"
+      delete: "delete"
+      create:
+        title: "Create new article"
+      edit:
+        title: "Edit %{title}"
+      sorting:
+        types:
+          newest: "Newest"
+          popularity: "Popularity"
+        sort: "Sort"
+    navbar:
+      user:
+        profile: "My profile"
+        edit: "Edit page"
+        log_out: "Log out"
     pagination:
       first: "<< First"
       truncate: "..."

@@ -2,6 +2,13 @@ ru:
   activerecord:
     models:
       user: "Пользователь"
+  user:
+    views:
+      articles: "Статьи пользователя"
+      show:
+        articles_written: "Статей написано:"
+        comments_written: "Комментариев оставлено:"
+        registered_at: "Зарегистрирован:"
   simple_form:
     labels:
       user:

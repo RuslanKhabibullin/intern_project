@@ -1,7 +1,7 @@
 = form_tag(path, method: :get, class: "sort-form") do
   .form-inputs
     = select_tag :sort_type,
-            options_for_select(ArticlesSorting::SORTING_TYPES, 1), class: "form-control"
+            options_for_select(article_sorting_types, 1), class: "form-control"
 
   .form-actions
-    = submit_tag "Sort", class: "btn btn-primary btn-sort"
+    = submit_tag t("views.article.sorting.sort"), class: "btn btn-primary btn-sort"
