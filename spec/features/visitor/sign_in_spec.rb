@@ -7,14 +7,14 @@ feature "Sign in" do
 
   scenario "Visitor sign in with invalid data" do
     fill_form(:user, :edit, email: user.email, password: "mismatch")
-    click_button "SignIn"
+    click_button "Authorization"
 
     expect(page).to have_content "Invalid"
   end
 
   scenario "Visitor sign in with valid data" do
     fill_form(:user, email: user.email, password: user.password)
-    click_button "SignIn"
+    click_button "Authorization"
 
     expect(page).to have_link "Log out", href: destroy_user_session_path
   end

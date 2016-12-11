@@ -1,6 +1,7 @@
 en:
   views:
     edit: 'Edit'
+    likes: "Likes: %{count}"
     navbar:
       user:
         profile: "My profile"
@@ -12,3 +13,6 @@ en:
       last: "Last >>"
       next: "Next >"
       previous: "< Prev"
+    comment:
+      new:
+        title: "New comment"

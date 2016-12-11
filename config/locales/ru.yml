@@ -1,18 +1,34 @@
 ru:
   views:
     edit: "Редактирование"
+    likes: "Нравится: %{count}"
     navbar:
       user:
         profile: "Мой профиль"
         edit: "Настройки"
         log_out: "Выход"
+    pagination:
+      first: "<< Начало"
+      truncate: "..."
+      last: "Конец >>"
+      next: "След. >"
+      previous: "< Пред."
+    comment:
+      new:
+        title: "Новый комментарий"
   activerecord:
+    models:
+      comment: "Комментарий"
     errors:
       messages:
         record_invalid: 'Возникли ошибки: %{errors}'
         restrict_dependent_destroy:
           has_one: 'Невозможно удалить запись, так как существует зависимость: %{record}'
           has_many: 'Невозможно удалить запись, так как существуют зависимости: %{record}'
+  simple_form:
+    labels:
+      comment:
+        text: "Текст"
   errors:
     format: "%{attribute} %{message}"
     messages:
