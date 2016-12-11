@@ -35,6 +35,7 @@ group :test do
   gem "codeclimate-test-reporter", require: false
   gem "email_spec"
   gem "formulaic"
+  gem "simplecov"
   gem "shoulda-matchers"
 end
 
