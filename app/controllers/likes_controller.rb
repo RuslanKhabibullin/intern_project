@@ -9,9 +9,7 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    if like = article.likes.find_by(user: current_user)
-      like.destroy
-    end
+    article.likes.find_by(user: current_user).destroy
     redirect_back(fallback_location: article)
   end
 end
