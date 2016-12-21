@@ -37,6 +37,9 @@ Metrics/LineLength:
 Metrics/BlockLength:
   Enabled: false
 
+Lint/AssignmentInCondition:
+  Enabled: false
+
 Lint/EndAlignment:
   AlignWith: variable
   SupportedStyles:
