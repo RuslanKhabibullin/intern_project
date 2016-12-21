@@ -2,7 +2,6 @@ class LikesController < ApplicationController
   before_action :authenticate_user!
 
   expose(:article)
-  expose(:like) { article.likes.find_by(user: current_user) }
 
   def create
     Likes::CreateLike.call(current_user: current_user, article: article)
@@ -10,7 +9,7 @@ class LikesController < ApplicationController
   end
 
   def destroy
-    like&.destroy
+    article.likes.find_by(user: current_user).destroy
     redirect_back(fallback_location: article)
   end
 end
