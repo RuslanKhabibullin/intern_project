@@ -16,8 +16,8 @@ describe Article, type: :model do
   it { is_expected.to validate_presence_of(:title) }
   it { is_expected.to validate_presence_of(:content) }
   it { is_expected.to validate_presence_of(:author_id) }
-  it { is_expected.to validate_length_of(:title).is_at_least(2) }
-  it { is_expected.to validate_length_of(:title).is_at_most(150) }
+  it { is_expected.to validate_length_of(:title).is_at_least 2 }
+  it { is_expected.to validate_length_of(:title).is_at_most 150 }
   it { is_expected.to validate_uniqueness_of(:title).case_insensitive }
 
   it { is_expected.to be_valid }
@@ -28,6 +28,6 @@ describe Article, type: :model do
       create(:like, user: author, article: article)
     end
 
-    specify { expect(article.likes_count).eql?(1) }
+    specify { expect(article.likes_count).eql? 1 }
   end
 end

@@ -14,14 +14,6 @@ body {
   background: $lightgrey;
 }
 
-.alert-notice {
-  @extend .alert-info;
-}
-
-.alert-alert {
-  @extend .alert-warning;
-}
-
 .mainbox {
   margin-top: 30px;
   font-weight: normal;

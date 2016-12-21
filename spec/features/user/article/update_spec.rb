@@ -8,6 +8,6 @@ feature "Update article by another user" do
   background { visit edit_article_path(article) }
 
   scenario "Another user update article" do
-    expect(page).not_to have_content("Update article")
+    expect(page).not_to have_content "Update article"
   end
 end

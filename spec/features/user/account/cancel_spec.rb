@@ -8,11 +8,9 @@ feature "Cancel account" do
   scenario "User cancel own account" do
     click_link "Cancel my account"
 
-    expect(page).to have_content("Authorization")
-
     fill_form(:user, email: current_user.email, password: current_user.password)
     click_button "SignIn"
 
-    expect(page).to have_content("Invalid")
+    expect(page).to have_content "Invalid"
   end
 end

@@ -9,16 +9,15 @@ feature "Update article" do
 
   scenario "Author update article with invalid data" do
     fill_form(:article, :edit, title: "")
-    click_button("Update Article")
+    click_button "Update Article"
 
-    expect(page).to have_content("problems")
+    expect(page).to have_content "problems"
   end
 
   scenario "Author update article with valid data" do
     fill_form(:article, :edit, title: "newTitle")
-    click_button("Update Article")
+    click_button "Update Article"
 
-    expect(page).to have_content("successfully updated")
-    expect(page).to have_content("newTitle")
+    expect(page).to have_content "successfully updated"
   end
 end

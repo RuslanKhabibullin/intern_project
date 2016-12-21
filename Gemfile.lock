@@ -1,6 +1,6 @@
 GIT
-  remote: git://github.com/amatsuda/kaminari.git
-  revision: 7176005a676682887f468472c7a6e4cac485e087
+  remote: https://github.com/amatsuda/kaminari
+  revision: 384eead564b8016da6a0054c73cec0a44ff63bf7
   specs:
     kaminari (1.0.0.alpha)
       activesupport (>= 4.1.0)
@@ -9,12 +9,14 @@ GIT
       kaminari-core
     kaminari-actionview (0.1.0)
       actionview
+      kaminari-core
     kaminari-activerecord (0.1.0)
       activerecord
+      kaminari-core
     kaminari-core (0.1.0)
 
 GIT
-  remote: git://github.com/audionerd/draper.git
+  remote: https://github.com/audionerd/draper
   revision: e816e0e5876b76c648c0928f1c3f2aa2c7a3d1f2
   branch: rails5
   specs:
@@ -275,6 +277,7 @@ GEM
     scss_lint (0.50.3)
       rake (>= 0.9, < 12)
       sass (~> 3.4.20)
+    seedbank (0.4.0)
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
     simple_form (3.3.1)
@@ -299,6 +302,8 @@ GEM
       sysexits (~> 1.1)
     spring (2.0.0)
       activesupport (>= 4.2)
+    spring-commands-rspec (1.0.4)
+      spring (>= 0.9.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
       spring (>= 1.2, < 3.0)
@@ -374,12 +379,14 @@ DEPENDENCIES
   rubocop-rspec
   sass-rails (~> 5.0)
   scss_lint
+  seedbank
   shoulda-matchers
   simple_form
   slim
   slim-rails
   slim_lint
   spring
+  spring-commands-rspec
   spring-watcher-listen (~> 2.0.0)
   turbolinks (~> 5)
   tzinfo-data

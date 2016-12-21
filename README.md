@@ -1,24 +1,35 @@
-# README
+[![Code Climate](https://codeclimate.com/github/RuslanKhabibullin/intern_project/badges/gpa.svg)](https://codeclimate.com/github/RuslanKhabibullin/intern_project)
+[![Test Coverage](https://codeclimate.com/github/RuslanKhabibullin/intern_project/badges/coverage.svg)](https://codeclimate.com/github/RuslanKhabibullin/intern_project/coverage)
+[![Build Status](https://semaphoreci.com/api/v1/khabibullin_ruslan/intern_project/branches/master/badge.svg)](https://semaphoreci.com/khabibullin_ruslan/intern_project)
+# Flatstack intern blog
+## Getting Started
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Bootstrap application
 
-Things you may want to cover:
+1. Clone application.
 
-* Ruby version
+   ```bash
+   git clone https://github.com/RuslanKhabibullin/intern_project
+   ```
+3. Run setup script
 
-* System dependencies
+  ```bash
+  bin/setup
+  ```
 
-* Configuration
+4. Run test and quality suits to make sure all dependencies are satisfied and applications works correctly before making changes.
 
-* Database creation
+  ```bash
+  bin/ci
+  ```
 
-* Database initialization
+5. Run app
 
-* How to run the test suite
+  ```bash
+  bin/server
+  ```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Resources
 
-* Deployment instructions
-
-* ...
+- Testing server: [https://flatstack-inrern-project.herokuapp.com](https://flatstack-inrern-project.herokuapp.com/users/sign_in)
+- CI: [https://semaphoreci.com/khabibullin_ruslan/intern_project](https://semaphoreci.com/khabibullin_ruslan/intern_project)

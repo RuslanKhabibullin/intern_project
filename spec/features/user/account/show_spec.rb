@@ -9,8 +9,11 @@ feature "Show account profile" do
     visit user_path(current_user)
   end
 
-  scenario "Page contain user stats" do
-    expect(page).to have_content("Articles written: 1")
-    expect(page).to have_content("Comments written: 1")
+  scenario "Page contain user articles count" do
+    expect(page).to have_content "Articles written: 1"
+  end
+
+  scenario "Page contain user comments count" do
+    expect(page).to have_content "Comments written: 1"
   end
 end

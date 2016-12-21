@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
   def create
     article.author = current_user
     article.save
-    respond_with(article)
+    respond_with article
   end
 
   def show
@@ -29,7 +29,7 @@ class ArticlesController < ApplicationController
 
   def update
     article.update_attributes(article_params)
-    respond_with(article)
+    respond_with article
   end
 
   def destroy

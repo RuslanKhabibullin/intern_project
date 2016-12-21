@@ -5,19 +5,10 @@ class ArticleDecorator < ApplicationDecorator
   delegate :username, to: :author, prefix: true
 
   def content_preview
-    if object.content.length > 250
-      "#{object.content.first(250)}..."
-    else
-      object.content
-    end
+    h.truncate(object.content, length: 250, separator: " ")
   end
 
   def liked_by?(user)
-    user = user.to_model
-    object.liked_by?(user)
-  end
-
-  def user_like(user)
-    object.likes.find_by(user: user)
+    object.liked_users.include? user
   end
 end

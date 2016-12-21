@@ -34,6 +34,12 @@ Metrics/LineLength:
   Description: 'Limit lines to 120 characters.'
   Max: 120
 
+Metrics/BlockLength:
+  Enabled: false
+
+Lint/AssignmentInCondition:
+  Enabled: false
+
 Lint/EndAlignment:
   AlignWith: variable
   SupportedStyles:
