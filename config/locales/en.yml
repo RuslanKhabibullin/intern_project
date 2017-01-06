@@ -16,3 +16,6 @@ en:
     comment:
       new:
         title: "New comment"
+  helpers:
+    links:
+      are_you_sure: "Are you sure?"

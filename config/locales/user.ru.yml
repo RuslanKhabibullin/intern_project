@@ -2,6 +2,9 @@ ru:
   activerecord:
     models:
       user: "Пользователь"
+    attributes:
+      user:
+        password: "Пароль"
   user:
     views:
       articles: "Статьи пользователя"
@@ -19,8 +22,6 @@ ru:
         username: "Имя пользователя"
     hints:
       user:
-        new:
-          password: "минимум 6 символов"
         edit:
           password: "Оставьте пустым, если не хотите его менять"
           current_password: "Введите текущий пароль, чтобы подтвердить изменения"

@@ -29,7 +29,7 @@ module ArticlesSorting
   end
 
   def article_sorting_types
-    SORTING_TYPES.map do |sorting_type|
+    @article_sorting_types ||= SORTING_TYPES.map do |sorting_type|
       [I18n.t("views.article.sorting.types.#{sorting_type}"), sorting_type]
     end
   end

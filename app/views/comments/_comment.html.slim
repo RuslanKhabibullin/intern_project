@@ -3,5 +3,5 @@
  span class="comment-time" = comment.formatted_creation_date
  - if policy(comment).manage?
    = link_to("delete", article_comment_path(article, comment), method: :delete,
-          data: { confirm: "Are you sure?" })
+          data: { confirm: t("helpers.links.are_you_sure") })
  p class="comment-text" = comment.text
