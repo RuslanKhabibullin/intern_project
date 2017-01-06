@@ -1,0 +1,27 @@
+ru:
+  activerecord:
+    models:
+      user: "Пользователь"
+    attributes:
+      user:
+        password: "Пароль"
+  user:
+    views:
+      articles: "Статьи пользователя"
+      show:
+        articles_written: "Статей написано:"
+        comments_written: "Комментариев оставлено:"
+        registered_at: "Зарегистрирован:"
+  simple_form:
+    labels:
+      user:
+        remember_me: "Запомнить меня"
+        password: "Пароль"
+        password_confirmation: "Подтверждение пароля"
+        locale: "Язык"
+        username: "Имя пользователя"
+    hints:
+      user:
+        edit:
+          password: "Оставьте пустым, если не хотите его менять"
+          current_password: "Введите текущий пароль, чтобы подтвердить изменения"

@@ -1,0 +1,14 @@
+en:
+  views:
+    article:
+      new: "Create new article"
+      delete: "delete"
+      create:
+        title: "Create new article"
+      edit:
+        title: "Edit %{title}"
+      sorting:
+        types:
+          newest: "Newest"
+          popularity: "Popularity"
+        sort: "Sort"

@@ -1,5 +1,3 @@
-# Additional translations at https://github.com/plataformatec/devise/wiki/I18n
-
 en:
   devise:
     confirmations:
@@ -60,3 +58,20 @@ en:
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
+  users:
+    registration: "Registration"
+    authorization: "Authorization"
+    edit:
+      title: "Edit %{user}"
+      unhappy: "Unhappy?"
+      cancel_my_account: "Cancel my account"
+    passwords:
+      forgot_your_password: "Forgot your password?"
+      send_me_reset_password_instructions: "Send me reset password instructions"
+      change: "Change my password"
+      new: "New password"   
+  shared:
+    links:
+      anything_else: "Anything else?"
+      back: "Back"
+      sign_in_with: "Sign in with %{provider}"

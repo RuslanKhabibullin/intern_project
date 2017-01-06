@@ -4,7 +4,6 @@ feature "Update account" do
   include_context "current user signed in"
 
   def fill_and_submit_edit_form(attributes)
-    attributes[:current_password] = current_user.password
     fill_form(:user, :edit, attributes)
     click_button "Update"
   end

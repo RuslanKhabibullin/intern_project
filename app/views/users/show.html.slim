@@ -2,9 +2,9 @@
   h1 = user.username
   .user-additional-data
     p <strong>Email:</strong> #{ user.email }
-    p <strong>Articles written:</strong> #{ user.articles_count }
-    p <strong>Comments written:</strong> #{ user.comments_count }
-    p <strong>Registered at:</strong> #{ user.formatted_creation_date }
+    p <strong>#{t "user.views.show.articles_written"}</strong> #{ user.articles_count }
+    p <strong>#{t "user.views.show.comments_written"}</strong> #{ user.comments_count }
+    p <strong>#{t "user.views.show.registered_at"}</strong> #{ user.formatted_creation_date }
   .user-link-block
-    = link_to("User articles", user_articles_path(user))
+    = link_to t("user.views.articles"), user_articles_path(user)
 

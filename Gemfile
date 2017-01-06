@@ -26,6 +26,7 @@ gem "interactor"
 gem "responders"
 gem "seedbank"
 gem "omniauth-google-oauth2"
+gem "http_accept_language"
 # Draper Rails5 issue
 gem "activemodel-serializers-xml"
 
@@ -34,6 +35,7 @@ group :test do
   gem "codeclimate-test-reporter", require: false
   gem "email_spec"
   gem "formulaic"
+  gem "simplecov"
   gem "shoulda-matchers"
 end
 

@@ -9,7 +9,7 @@ feature "Cancel account" do
     click_link "Cancel my account"
 
     fill_form(:user, email: current_user.email, password: current_user.password)
-    click_button "SignIn"
+    click_button "Authorization"
 
     expect(page).to have_content "Invalid"
   end

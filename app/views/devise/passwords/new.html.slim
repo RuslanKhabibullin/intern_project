@@ -3,7 +3,7 @@
     .panel.panel-default
 
       .panel-heading
-        .panel-title Forgot your password?
+        .panel-title #{t "users.passwords.forgot_your_password"}
 
       .panel-body
         = simple_form_for(resource, as: resource_name, url: password_path(resource_name),
@@ -11,7 +11,6 @@
           = f.error_notification
           .form-inputs
             = f.input :email, required: true, autofocus: true
-          .form-actions
-            .col-sm-7.col-sm-offset-5.controls
-              = f.button :submit, "Send instructions"
+          .form-actions.col-sm-8.col-sm-offset-3.controls
+            = f.button :submit, t("users.passwords.send_me_reset_password_instructions")
         = render "devise/shared/links"

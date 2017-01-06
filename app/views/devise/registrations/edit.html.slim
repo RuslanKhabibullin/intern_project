@@ -3,7 +3,7 @@
     .panel.panel-default
       .panel-heading
         .panel-title
-          | Edit #{ resource_name.to_s.humanize }
+          | #{t "users.edit.title", user: current_user.username.to_s }
 
       .panel-body
         = simple_form_for(resource, as: resource_name, url: registration_path(resource_name),
@@ -12,17 +12,17 @@
           .form-inputs
             = f.input :username, required: true, autofocus: true
             = f.input :email, required: true
-            = f.input :password, autocomplete: "off",
-                    placeholder: "leave it blank if you don't want to change it", required: false
+            = f.input :locale, collection: User.locales, include_blank: false
+            = f.input :password, autocomplete: "off", required: false
             = f.input :password_confirmation, required: false
-            = f.input :current_password,
-                    placeholder: "we need your current password to confirm your changes", required: true
-          .form-actions
-            = f.button :submit, "Update"
-        h3
-          | Cancel my account
-        p
-          | Unhappy?
-          = link_to "Cancel my account", registration_path(resource_name),
-                  data: { confirm: "Are you sure?" }, method: :delete
-        = link_to "Back", :back
+          .form-actions.col-sm-7.col-sm-offset-6
+            = f.button :submit
+        .shared-links
+          h3
+            | #{t "users.edit.cancel_my_account"}
+          p
+            | #{t "users.edit.unhappy"}
+            '
+            = link_to t("users.edit.cancel_my_account"), registration_path(resource_name),
+                    data: { confirm: t("helpers.links.are_you_sure") }, method: :delete
+          = link_to t("shared.links.back"), :back

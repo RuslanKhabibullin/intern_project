@@ -1,0 +1,13 @@
+en:
+  user:
+    views:
+      articles: "User articles"
+      show:
+        articles_written: "Articles written:"
+        comments_written: "Comments written:"
+        registered_at: "Registered at:"
+  simple_form:
+    hints:
+      user:
+        edit:
+          password: "Leave it blank, if you dont want to change it"

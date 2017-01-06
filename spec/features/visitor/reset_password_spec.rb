@@ -6,13 +6,13 @@ feature "Reset password" do
 
   def update_user
     fill_in "New password", with: new_password
-    fill_in "Confirm your new password", with: new_password
+    fill_in "Password confirmation", with: new_password
     click_button "Change my password"
   end
 
   def fill_and_submit_reset_form(email)
     fill_in "Email", with: email
-    click_button "Send instructions"
+    click_button "Send me reset password instructions"
   end
 
   background { visit new_user_password_path }

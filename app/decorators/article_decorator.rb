@@ -9,6 +9,7 @@ class ArticleDecorator < ApplicationDecorator
   end
 
   def liked_by?(user)
+    user = user.to_model if user.decorated?
     object.liked_users.include? user
   end
 end
