@@ -8,20 +8,9 @@ module ArticlesSorting
 
   private
 
-  SORTING_TYPES = %w(newest popularity).freeze
-
   def sorted_articles
     sort_type = params[:sort_type]
-    if SORTING_TYPES.include?(sort_type)
-      attribute_name = attribute_by_type(sort_type)
-      articles_by_params.order(attribute_name => :desc)
-    else
-      articles_by_params.order(created_at: :desc)
-    end
-  end
-
-  def attribute_by_type(type)
-    type.eql?("newest") ? :created_at : :likes_count
+    OrderArticles.new(articles_by_params, sort: sort_type).all
   end
 
   def articles_by_params
@@ -29,8 +18,8 @@ module ArticlesSorting
   end
 
   def article_sorting_types
-    @article_sorting_types ||= SORTING_TYPES.map do |sorting_type|
-      [I18n.t("views.article.sorting.types.#{sorting_type}"), sorting_type]
+    @article_sorting_types ||= OrderArticles::ORDER_TYPES.map do |order_type|
+      [I18n.t("views.article.sorting.types.#{order_type}"), order_type]
     end
   end
 end
