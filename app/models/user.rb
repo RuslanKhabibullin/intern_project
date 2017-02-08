@@ -14,10 +14,7 @@ class User < ApplicationRecord
 
   validates :username, presence: true, length: { minimum: 2, maximum: 90 }
 
-  enum locale: {
-    en: "en",
-    ru: "ru"
-  }
+  enum locale: %i(en ru)
 
   def self.from_omniauth(access_token)
     data = access_token.info
